@@ -1,0 +1,14 @@
+<div style="display: flex;">
+    <tagButton tag="Angular"></tagButton>
+    <tagButton tag="C#" canDelete="true" (delete)="ondelete($event)" ></tagButton>
+   <tagButton tag="Type Script" ></tagButton>
+   <tagButton tag="CSS" canDelete="true" (delete)="ondelete($event)" ></tagButton>
+</div>
+
+<!-- 刪除會同時刪除 -->
+<hr />
+可以新增/刪除
+<tagList [(List)]="tags"></tagList>
+<hr />
+只能列表
+<tagList [List]="tags" [readOnly]="true"></tagList>

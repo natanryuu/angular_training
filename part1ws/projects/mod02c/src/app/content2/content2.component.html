@@ -1,0 +1,64 @@
+<p> hello here is contnet2</p>
+<select #selCountry (change)="onchange(selCountry.value)">
+    <!-- <option value="ALl">全部</option>
+    <option value="US">美國</option>
+    <option value="JPN">日本</option>
+    <option value="TWN">台灣</option>
+    <option value="UK">英國</option>
+    <option value="ohter">未開發</option> -->
+    @for (c of countries; track $index){
+        <option [value]="c.value"> {{c.name}} </option>
+    }
+</select>
+<ul>
+    @for (item of members; track $index) {
+        <!-- <li> {{item.name}} - {{item.age}} - {{item.country}} </li> -->
+
+        @if ($first) {
+        <li style= "background-color: blueviolet;"> {{$index +1}} {{item.name}} - {{item.age}} - {{item.country}}  </li>
+        }
+
+        @else if ($odd) {
+            <li style= "background-color: burlywood;"> {{$index +1}} {{item.name}} - {{item.age}} - {{item.country}}  </li>
+        }
+
+        @else {
+            <li> {{$index +1}} {{item.name}} - {{item.age}} - {{item.country}}  </li>
+        }
+
+        @if ($last) {
+            <li style= "background-color: blueviolet;"> 總共筆數：{{$count}}  </li>
+        }
+    }
+    @empty {
+        <li>
+            沒有資料
+        </li>
+    }
+</ul>
+<div>
+    @switch (country){
+        @case ('ALL') {
+            所有
+        } 
+        @case ('USA') {
+            美國
+        }
+        @case ('JPN') {
+            加拿大
+        }
+        @case ('TWN') {
+            墨西哥
+        }
+        @case ('UK') {
+            英國
+        }
+        @case ('GER') {
+            德國
+        }
+        @default {
+            未開發
+        }
+    }
+    的客戶資料如下：
+</div> 
