@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 
 
@@ -31,5 +31,9 @@ import { Component } from '@angular/core';
   styles: ``
 })
 export class AboutComponent {
-
+  @ViewChild('U2447') U2447!: HTMLElement | any;
+  ngAfterViewInit() {
+    console.log('U2447', this.U2447.nativeElement);
+    this.U2447.nativeElement.style.backgroundColor = 'lightblue'; 
+  }
 }
