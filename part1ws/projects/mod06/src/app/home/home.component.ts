@@ -21,6 +21,8 @@ export class HomeComponent {
   }
 
   @ViewChild(DemoContent1Component) 
+  // 確認不是空值 用DEMO!
+  // 並且在運行時不應為 null 或 undefined。
   demo1!: DemoContent1Component;
   changeColor() {
     this.demo1.ChangeColor();

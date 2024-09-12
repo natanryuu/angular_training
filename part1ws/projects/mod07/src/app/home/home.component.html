@@ -1,0 +1,39 @@
+<div #divQty>
+    數量:{{qty()}} 
+   <button (click)="addQty()">+</button>
+    <button (click)="minusQty()">-</button>
+</div>
+<div #divPrice>    
+  售價: {{price() | currency}} <button (click)="changePrice()">Change Price</button>
+</div>
+<div>
+  合計: {{total() |currency}} 
+</div>
+
+
+<div class="container mt-4">
+  <div class="row mb-3">
+    <div class="col" #divQty>
+      <div class="d-flex align-items-center">
+        <span class="me-2">數量: {{qty()}}</span>
+        <button class="btn btn-primary btn-sm me-1" (click)="addQty()">+</button>
+        <button class="btn btn-danger btn-sm" (click)="minusQty()">-</button>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col" #divPrice>
+      <div class="d-flex align-items-center">
+        <span class="me-2">售價: {{price() | currency}}</span>
+        <button class="btn btn-warning btn-sm" (click)="changePrice()">Change Price</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="d-flex align-items-center">
+        <span>合計: {{total() | currency}}</span>
+      </div>
+    </div>
+  </div>
+</div>

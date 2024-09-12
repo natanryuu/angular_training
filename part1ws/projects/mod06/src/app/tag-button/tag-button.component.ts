@@ -22,8 +22,11 @@ import { booleanAttribute, Component, EventEmitter, Input, Output } from '@angul
   styles: ``
 })
 export class TagButtonComponent {
+  
   @Input({ required: true, alias: 'tag' }) tagName: string = ""; //alias 定義屬性外顯名稱
+
   @Input({ transform: booleanAttribute }) canDelete: boolean = false;
+
   @Output() delete = new EventEmitter<string>();
   onDelete() {
     this.delete.emit(this.tagName)
